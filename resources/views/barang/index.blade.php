@@ -99,7 +99,7 @@
                                                         class="btn btn-info btn-circle btn">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
-                                                    <a href="#" onclick="deleteConfirm('{{ $b->nama_barang }}')" class="btn btn-danger btn-circle btn">
+                                                    <a href="#" onclick="deleteConfirm('{{ $b->id }}')" class="btn btn-danger btn-circle btn">
                                                         <i class="fas fa-trash"></i>
                                                     </a>                                                    
                                                     

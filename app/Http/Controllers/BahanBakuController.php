@@ -99,7 +99,6 @@ class bahanbakuController extends Controller
         $empData = [
             'bahanbaku_kode' => $request->input('bahanbaku_kode'),
             'bahanbaku_nama' => $request->input('bahanbaku_nama'),
-            // 'harga_bahanbaku' => $request->input('harga_bahanbaku'),
             'bahanbaku_jenis' => $request->input('bahanbaku_jenis'),
             'bahanbaku_satuan' => $request->input('bahanbaku_satuan'),
         ];

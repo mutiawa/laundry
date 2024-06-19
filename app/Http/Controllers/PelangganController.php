@@ -69,10 +69,12 @@ class PelangganController extends Controller
      * @param  \App\Models\Pelanggan  
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pelanggan $pelanggan)
+    public function edit($id)
     {
+        $pelanggan = Pelanggan::find($id);
         return view('pelanggan.edit', compact('pelanggan'));
     }
+    
 
     /**
      * Update the specified resource in storage.
@@ -85,7 +87,6 @@ class PelangganController extends Controller
     {
         //digunakan untuk validasi kemudian kalau ok tidak ada masalah baru disimpan ke db
         $validated = $request->validate([
-            'id_pelanggan' => 'required',
             'id_pelanggan' => 'required',
             'nama_pelanggan' => 'required',
             'no_telp_pelanggan' => 'required',

@@ -108,7 +108,7 @@
                                             <td>{{ $p->alamat_pelanggan }}</td>
                                             <td>{{ $p->jenis_kelamin_pelanggan }}</td>
                                             <td>
-                                                    <a href="{{ route('pelanggan.edit', $p->id_pelanggan) }}" class="btn btn-success btn-icon-split btn-sm">
+                                                    <a href="{{ route('pelanggan.edit', $p->id) }}" class="btn btn-success btn-icon-split btn-sm">
                                                         <span class="icon text-white-50">
                                                             <i class="ti ti-check"></i>
                                                         </span>

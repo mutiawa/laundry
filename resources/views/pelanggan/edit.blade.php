@@ -70,7 +70,7 @@
 
                 <!-- Awal Dari Input Form -->
                 <form action="{{ route('pelanggan.update', $pelanggan->id) }}" method="post">
-                    @csrf
+                  @csrf
                     @method('PUT')
                     <fieldset disabled>
                         <div class="mb-3"><label for="pelangganidlabel">Id Pelanggan</label>

@@ -77,10 +77,8 @@ Route::get('/penggajian/destroy/{id}', [penggajianController::class, 'destroy'])
 Route::resource('penggajian', penggajianController::class);
 
 // bahan baku
-Route::get('/bahanbaku', [BahanBakuController::class, 'index'])->name('bahanbaku.index');
-Route::get('/bahanbaku/create', [BahanBakuController::class, 'create'])->name('bahanbaku.create');
-Route::post('/bahanbaku', [BahanBakuController::class, 'store'])->name('bahanbaku.store');
-Route::resource('bahanbaku', BahanBakuController::class);
+Route::resource('/bahanbaku', BahanbakuController::class);
+Route::get('/bahanbaku/destroy/{id}', [App\Http\Controllers\BahanbakuController::class,'destroy']);
 
 // barang
 Route::get('/barang', [BarangController::class, 'index'])->name('barang.index');
@@ -131,11 +129,14 @@ Route::get('jurnal/viewdatabukubesar/{periode}/{akun}', [App\Http\Controllers\Ju
 Route::get('pelanggan', [PelangganController::class, 'index'])->middleware('auth');
 Route::get('/pelanggan/destroy/{id}', [PelangganController::class,'destroy'])->middleware(['auth']);
 Route::get('/pelanggan/{id}/edit', [PelangganController::class,'edit'])->middleware(['auth']);
+Route::put('/pelanggan/{id}', [PelangganController::class, 'update'])->name('pelanggan.update');
+Route::resource('/pelanggan', PelangganController::class)->middleware(['auth']);
+
 Route::resource('/pelanggan', PelangganController::class)->middleware(['auth']);
 Route::get('peralatan', [PeralatanController::class, 'index']);
 Route::resource('/peralatan', App\Http\Controllers\PeralatanController::class)->middleware(['auth']);
 Route::get('/peralatan/destroy/{id}', [App\Http\Controllers\PeralatanController::class,'destroy'])->middleware(['auth']);
-Route::put('/pelanggan/{id}', [PelangganController::class, 'update'])
+
 // untuk midtrans
 Route::get('midtrans', [App\Http\Controllers\CobaMidtransController::class,'index'])->middleware(['auth']);
 Route::get('midtrans/status', [App\Http\Controllers\CobaMidtransController::class,'cekstatus2'])->middleware(['auth']);
